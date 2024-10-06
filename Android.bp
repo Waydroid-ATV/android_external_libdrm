@@ -72,7 +72,10 @@ cc_defaults {
         "-Wno-pointer-arith",
         "-Wno-unused-parameter",
         "-Wno-unused-variable",
+<<<<<<< HEAD
         "-Wno-unused-function",
+=======
+>>>>>>> libdrm-2.4.123
     ],
     export_system_include_dirs: ["."],
 }
@@ -83,6 +86,7 @@ cc_library_headers {
     host_supported: true,
     defaults: ["libdrm_defaults"],
     export_include_dirs: ["include/drm", "android"],
+<<<<<<< HEAD
 }
 
 genrule {
@@ -91,6 +95,12 @@ genrule {
     srcs: ["include/drm/drm_fourcc.h"],
     tool_files: ["gen_table_fourcc.py"],
     cmd: "python3 $(location gen_table_fourcc.py) $(location include/drm/drm_fourcc.h) $(out)",
+=======
+    apex_available: [
+        "//apex_available:platform",
+        "com.android.virt",
+    ],
+>>>>>>> libdrm-2.4.123
 }
 
 // Library for the device
@@ -104,10 +114,13 @@ cc_library {
         "libdrm_sources",
     ],
 
+<<<<<<< HEAD
     generated_headers: [
         "generated_static_table_fourcc_h",
     ],
 
+=======
+>>>>>>> libdrm-2.4.123
     export_include_dirs: ["include/drm", "android"],
 
     cflags: [
@@ -116,7 +129,10 @@ cc_library {
         "-Wno-sign-compare",
         "-Wno-tautological-compare",
     ],
+<<<<<<< HEAD
     shared_libs: ["liblog"],
+=======
+>>>>>>> libdrm-2.4.123
     apex_available: [
         "//apex_available:platform",
         "com.android.virt",
