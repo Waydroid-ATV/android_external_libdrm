@@ -92,14 +92,6 @@ genrule {
     cmd: "python3 $(location gen_table_fourcc.py) $(location include/drm/drm_fourcc.h) $(out)",
 }
 
-genrule {
-    name: "generated_static_table_fourcc_h",
-    out: ["generated_static_table_fourcc.h"],
-    srcs: ["include/drm/drm_fourcc.h"],
-    tool_files: ["gen_table_fourcc.py"],
-    cmd: "python3 $(location gen_table_fourcc.py) $(in) $(out)",
-}
-
 // Library for the device
 cc_library {
     name: "libdrm",
